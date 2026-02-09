@@ -1,0 +1,10 @@
+.cache.sqlite
+__pycache__/
+.ipynb_checkpoints/
+.ben/
+test.ipynb
+telechargement.ipynb
+/src/test.ipynb
+/base_de_donnee/Postgres_Data
+/base_de_donnee/.env
+/data/

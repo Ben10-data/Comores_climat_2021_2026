@@ -1,0 +1,10 @@
+#version: '3.8'
+
+include:
+  - ./base_de_donnee/docker-compose.yaml
+
+
+networks:
+  comores_meteo :
+    external: true
+
