@@ -1,7 +1,7 @@
+.benv/
 .cache.sqlite
 __pycache__/
 .ipynb_checkpoints/
-.ben/
 test.ipynb
 telechargement.ipynb
 /src/test.ipynb
