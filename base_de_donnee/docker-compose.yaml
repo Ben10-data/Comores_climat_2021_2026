@@ -1,0 +1,26 @@
+
+#version: '3.9'
+
+
+services:
+  
+  postgres:
+    image: postgres:16
+    container_name: postgres_com
+    ports:
+      - "${Port_externe_Post}:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${Post_user}
+      POSTGRES_PASSWORD: ${Post_pwd}
+      POSTGRES_DB: ${Post_DB}
+    volumes:
+      - ./Postgres_Data:/var/lib/postgresql/data
+    
+
+
+    networks:
+      - comores_meteo
+
+     
