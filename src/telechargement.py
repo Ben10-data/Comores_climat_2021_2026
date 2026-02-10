@@ -11,9 +11,10 @@ from retry_requests import retry
 
 class Telechargement:
 
-    def __init__(self, altitude, longitude, file_lien_csv):
+    def __init__(self, altitude, longitude,island, file_lien_csv):
         self.altitude = altitude
         self.longitude = longitude
+        self.island = island
         self.file_lien_csv = file_lien_csv
     
     def get_telechargement(self):
@@ -128,7 +129,7 @@ class Telechargement:
                     hourly_data["et0_fao_evapotranspiration"] = hourly_et0_fao_evapotranspiration
                     hourly_data["vapour_pressure_deficit"] = hourly_vapour_pressure_deficit
                     hourly_data["showers"] = hourly_showers
-                    hourly_data["island"] = "Mwali"
+                    hourly_data["island"] = f"{self.island}"
                     hourly_data["ville"] = ville
                     hourly_data["grille_meteo"] = grille_meteo
 
