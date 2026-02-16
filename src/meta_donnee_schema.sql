@@ -1,3 +1,4 @@
+
 -- shema de mes metadonnées 
 
     -- "showers": {
@@ -11,6 +12,8 @@
     -- },
 
 
+
+-- Creation de la table du metadonne 
 
 CREATE TABLE metadata_columns (
     nom_du_table TEXT,
@@ -33,121 +36,147 @@ INSERT INTO metadata_columns
  min_obs, max_obs, hard_min, hard_max,
  nullable, source)
 VALUES
--- date
-('meteo_par_jour','date','TEXT',
+
+
+('meteo_par_heure','date','TEXT',
  'ISO 8601 date (YYYY-MM-DD or datetime)',
  NULL,NULL,NULL,NULL,
  FALSE,'Open-Meteo'),
 
--- temperature
-('meteo_par_jour','temperature_2m','FLOAT','°C',
+
+('meteo_par_heure','temperature_2m','FLOAT','°C',
  3.9,35.759,-1,50,
  FALSE,'Open-Meteo'),
 
--- humidity
-('meteo_par_jour','relative_humidity_2m','FLOAT','%',
+
+('meteo_par_heure','relative_humidity_2m','FLOAT','%',
  32,100,0,200,
  FALSE,'Open-Meteo'),
 
--- dew point
-('meteo_par_jour','dew_point_2m','FLOAT','°C',
+
+('meteo_par_heure','dew_point_2m','FLOAT','°C',
  -2.183547,28.286875,-5,50,
  FALSE,'Open-Meteo'),
 
--- rain
-('meteo_par_jour','rain','FLOAT','mm',
+
+('meteo_par_heure','rain','FLOAT','mm',
  0.0,43.8,0,300,
  TRUE,'Open-Meteo'),
 
--- precipitation probability
-('meteo_par_jour','precipitation_probability','FLOAT','%',
+
+('meteo_par_heure','precipitation_probability','FLOAT','%',
  0,100,NULL,NULL,
  TRUE,'Open-Meteo'),
 
--- precipitation
-('meteo_par_jour','precipitation','FLOAT','mm',
+('meteo_par_heure','precipitation','FLOAT','mm',
  0.0,45.0,0,300,
  TRUE,'Open-Meteo'),
 
--- wind speed 10m
-('meteo_par_jour','wind_speed_10m','FLOAT','km/h',
+
+('meteo_par_heure','wind_speed_10m','FLOAT','km/h',
  0,53.096035,0,100,
  FALSE,'Open-Meteo'),
 
--- wind direction
-('meteo_par_jour','wind_direction_10m','FLOAT','degrees (0–360)',
+
+('meteo_par_heure','wind_direction_10m','FLOAT','degrees (0–360)',
  0,54,0,360,
  FALSE,'Open-Meteo'),
 
--- wind speed 80m
-('meteo_par_jour','wind_speed_80m','FLOAT','km/h',
+
+('meteo_par_heure','wind_speed_80m','FLOAT','km/h',
  0.584628,62.938255,NULL,NULL,
  TRUE,'Open-Meteo'),
 
--- wind speed 120m
-('meteo_par_jour','wind_speed_120m','FLOAT','km/h',
+('meteo_par_heure','wind_speed_120m','FLOAT','km/h',
  0,65.337296,NULL,NULL,
  TRUE,'Open-Meteo'),
 
--- cloud cover high
-('meteo_par_jour','cloud_cover_high','FLOAT','%',
+
+('meteo_par_heure','cloud_cover_high','FLOAT','%',
  -1.0,101.0,NULL,NULL,
  TRUE,'Open-Meteo'),
 
--- pressure msl
-('meteo_par_jour','pressure_msl','FLOAT','hPa',
+('meteo_par_heure','pressure_msl','FLOAT','hPa',
  1003.6,1024,950,1050,
  FALSE,'Open-Meteo'),
 
--- surface pressure
-('meteo_par_jour','surface_pressure','FLOAT','hPa',
+('meteo_par_heure','surface_pressure','FLOAT','hPa',
  770.68884,1023.4,950,1050,
  FALSE,'Open-Meteo'),
 
--- visibility
-('meteo_par_jour','visibility','FLOAT','meters',
+('meteo_par_heure','visibility','FLOAT','meters',
  100.0,24140.0,0,50000,
  TRUE,'Open-Meteo'),
 
--- weather code
-('meteo_par_jour','weather_code','INTEGER','WMO weather code',
+
+('meteo_par_heure','weather_code','INTEGER','WMO weather code',
  0,96,0,99,
  TRUE,'Open-Meteo'),
 
--- apparent temperature
-('meteo_par_jour','apparent_temperature','FLOAT','°C',
+
+('meteo_par_heure','apparent_temperature','FLOAT','°C',
  1.360477,42.50478,-5,55,
  FALSE,'Open-Meteo'),
 
--- evapotranspiration
-('meteo_par_jour','evapotranspiration','FLOAT','mm/day',
+
+('meteo_par_heure','evapotranspiration','FLOAT','mm/day',
  0,0.58,0,10,
  TRUE,'Open-Meteo'),
 
--- et0 fao
-('meteo_par_jour','et0_fao_evapotranspiration','FLOAT','mm/day',
+('meteo_par_heure','et0_fao_evapotranspiration','FLOAT','mm/day',
  0.0,0.862587,0,10,
  TRUE,'Open-Meteo'),
 
--- vpd
-('meteo_par_jour','vapour_pressure_deficit','FLOAT','hPa',
+
+('meteo_par_heure','vapour_pressure_deficit','FLOAT','hPa',
  0.0,3.984451,0,50,
  TRUE,'Open-Meteo'),
 
--- showers
-('meteo_par_jour','showers','FLOAT','mm',
+('meteo_par_heure','showers','FLOAT','mm',
  0.0,21.30,0,200,
  TRUE,'Open-Meteo'),
 
--- dimensions
-('meteo_par_jour','island','TEXT',NULL,
+('meteo_par_heure','island','TEXT',NULL,
  NULL,NULL,NULL,NULL,
  FALSE,'Internal'),
 
-('meteo_par_jour','ville','TEXT',NULL,
+('meteo_par_heure','ville','TEXT',NULL,
  NULL,NULL,NULL,NULL,
  FALSE,'Internal'),
 
-('meteo_par_jour','grille_meteo','TEXT',NULL,
+('meteo_par_heure','grille_meteo','TEXT',NULL,
  NULL,NULL,NULL,NULL,
  FALSE,'Internal');
+
+
+-- Creation de la table meteo_par_heure
+CREATE TABLE meteo_par_heure (
+    date TEXT,
+    temperature_2m FLOAT,
+    relative_humidity_2m FLOAT,
+    dew_point_2m FLOAT,
+    rain FLOAT,
+    precipitation_probability FLOAT,
+    precipitation FLOAT,
+    wind_speed_10m FLOAT,
+    wind_direction_10m FLOAT,
+    wind_speed_80m FLOAT,
+    wind_speed_120m FLOAT,
+    cloud_cover_high FLOAT,
+    pressure_msl FLOAT,
+    surface_pressure FLOAT,
+    visibility FLOAT,
+    weather_code INTEGER,
+    apparent_temperature FLOAT,
+    evapotranspiration FLOAT,
+    et0_fao_evapotranspiration FLOAT,
+    vapour_pressure_deficit FLOAT,
+    showers FLOAT,
+    island TEXT,
+    ville TEXT,
+    grille_meteo TEXT
+);
+d
+comores_DB=# ALTER TABLE meteo_par_heure 
+ADD PRIMARY KEY (date, island, ville); 
+
