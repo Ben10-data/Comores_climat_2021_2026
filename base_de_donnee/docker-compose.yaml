@@ -17,9 +17,6 @@ services:
       POSTGRES_DB: ${Post_DB}
     volumes:
       - ./Postgres_Data:/var/lib/postgresql/data
-    
-
-
     networks:
       - comores_meteo
 

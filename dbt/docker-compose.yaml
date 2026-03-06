@@ -1,0 +1,16 @@
+
+
+services:
+
+   dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dbt_trans_snowflake
+    volumes:
+      - ./dbt_project:/usr/app
+    working_dir: /usr/app
+    tty: true
+    stdin_open: true
+    networks:
+      - comores_meteo

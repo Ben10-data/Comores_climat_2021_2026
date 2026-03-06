@@ -176,7 +176,13 @@ CREATE TABLE meteo_par_heure (
     ville TEXT,
     grille_meteo TEXT
 );
-d
+
 comores_DB=# ALTER TABLE meteo_par_heure 
 ADD PRIMARY KEY (date, island, ville); 
 
+--- Ajouter une nouvelle colonne qui va nous servir de cursor 
+ALTER TABLE meteo_par_heure
+ADD COLUMN created_at TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE metadata_columns
+ADD COLUMN id NUMBER AUTOINCREMENT;
