@@ -1,0 +1,8 @@
+sources:
+  - name: 'meteo_comores'
+    description: "Source de données météorologiques pour les Comores"
+    database: '{{ env_var("bd") }}'
+    schema: '{{ env_var("schema") }}'
+    tables:
+      - name: '{{ env_var("table") }}'
+        description: "Données météorologiques par heure pour les Comores"
