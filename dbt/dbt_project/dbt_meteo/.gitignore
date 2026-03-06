@@ -2,6 +2,6 @@
 target/
 dbt_packages/
 logs/
-dbt_project.yml
 profiles.yml
+dbt_project.yml
 
