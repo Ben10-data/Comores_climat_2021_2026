@@ -37,7 +37,7 @@ class Telechargement:
             params = {
                     "latitude": self.altitude,
                     "longitude":self.longitude, 
-                    "start_date": "2021-02-27",
+                    "start_date": "2021-03-20",
                     "end_date": "2026-02-03",
                     "hourly": ["temperature_2m", "relative_humidity_2m", "dew_point_2m", "rain", "precipitation_probability", "precipitation", "wind_speed_10m", "wind_direction_10m", "wind_speed_80m", "wind_speed_120m", "wind_speed_180m", "wind_direction_80m", "wind_direction_120m", "wind_direction_180m", "wind_gusts_10m", "temperature_80m", "temperature_120m", "temperature_180m", "cloud_cover", "cloud_cover_low", "cloud_cover_mid", "cloud_cover_high", "pressure_msl", "surface_pressure", "visibility", "weather_code", "apparent_temperature", "evapotranspiration", "et0_fao_evapotranspiration", "vapour_pressure_deficit", "showers"],
                     

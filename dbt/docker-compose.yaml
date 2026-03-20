@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: dbt_trans_snowflake
+    env_file:
+      - ./dbt_project/dbt_meteo/models/.env
     volumes:
       - ./dbt_project:/usr/app
     working_dir: /usr/app
@@ -14,3 +16,4 @@ services:
     stdin_open: true
     networks:
       - comores_meteo
+      

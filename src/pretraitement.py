@@ -57,7 +57,7 @@ class Pretraitement:
     def insert_data(self, table_name):
         data = self.supp_lignes_vides()
         engine = self.get_postCon()
-        data.to_sql(table_name, con=engine, if_exists='replace', index=False)
+        data.to_sql(table_name, con=engine, if_exists='append', index=False)
         print(f" Les données sont enregistrées dans la table{table_name} avec succees.")
 
 

@@ -5,40 +5,31 @@ from src.telechargement import Telechargement
 # Initialisation du géolocator
 geolocator = Nominatim(user_agent="geo_exemple")
 
-# Villes / Localités principales de Ndzuwani (Anjouan)
+# ville a rajouter 
+# Ngazidja
+Mitsa = "-11.388,43.283"
+lac_sale = "-11.368,43.305"
+mbadjini_ouest = "-11.847,43.319"
+mbadjini_est = "-11.837,43.359"
 
-# Mutsamudu - capitale, altitude ~60 m
-# location1 = geolocator.reverse("-12.2131,44.3950")
-# print(f'Mutsamudu: {location1.address}')
+#anjouan 
+mutsamudu = "-12.159,44.412"
+Page = "-12.178,44.386"
+Daji = "-12.312,44.493"
+Chiroroni = "-12.374,44.502"
+Domoni = "-12.259,44.518"
+BImbini = "-12.194,44.236"
 
-# # Domoni - ville côtière sud-est, altitude ~20 m
-# location2 = geolocator.reverse("-12.2881,44.4344")
-# print(f'Domoni: {location2.address}')
-
-# # Sima - ville côtière est, altitude ~10 m
-# location3 = geolocator.reverse("-12.2200,44.4570")
-# print(f'Sima: {location3.address}')
-
-# # Ouani - partie nord-est, altitude ~50 m
-# location4 = geolocator.reverse("-12.1325,44.4333")
-# print(f'Ouani: {location4.address}')
-
-# # Hahaya - localité centrale, altitude ~70 m
-# location5 = geolocator.reverse("-12.2500,44.3900")
-# print(f'Hahaya: {location5.address}')
-
-# # Bimbini - village sud-ouest, altitude ~15 m
-# location6 = geolocator.reverse("-12.3000,44.3600")
-# print(f'Bimbini: {location6.address}')
-
-# # Mont Ntringui - volcan intérieur, altitude ~1 595 m
-# location7 = geolocator.reverse("-12.2667,44.3833")
-# print(f'Mont Ntringui: {location7.address}')
+# Mwali
+Domoni = "-12.257,43.639"
+MIringoni = "-12.302,43.627"
+Itsamia = "-12.370,43.858"
+Hamavouna = "-12.378,43.834"
 
 
 
 if __name__ == "__main__":
    
-    ville = "Mont de Ntringui"
-    a1 = Telechargement(-12.2667, 44.3833, "Anjouan",f"/home/ben/Bureau/climat_Comores/data/{ville}.csv")
+    ville = "Mbandj_1"
+    a1 = Telechargement(-11.847,43.319, "Ngazidja",f"/home/ben/Bureau/climat_Comores/data1/{ville}.csv")
     a1.get_telechargement()
