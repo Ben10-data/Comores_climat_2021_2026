@@ -9,7 +9,8 @@ with source as (
        {{ dbt_utils.generate_surrogate_key(['date', 'ville', 'island']) }} 
        as meteo_heure_id,
        
-       date as heure, rain, temperature_2m, relative_humidity_2m,
+       date::TIMESTAMP_TZ as date_heure, date_heure::DATE as date_jour, date_heure::TIMESTAMP as heure,
+        rain, temperature_2m, relative_humidity_2m,
        dew_point_2m, precipitation,
        wind_speed_10m, wind_direction_10m,
        wind_gusts_10m,
