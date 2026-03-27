@@ -1,25 +1,12 @@
-with stg_meto as (
-    select m.*
-    from {{ ref('stg_comores__meteo') }} as m
-),
-geocoded as (
-    select g.*
-    from {{ ref('villes_geocoded') }} as g
-),
-joined as (
-    select 
-        m.*,
-        g.latitude, g.longitude
-    from stg_meto as m
-    left join geocoded as g
-    on m.ville = g.ville
-
+with int_fact_heure as (
+    select * 
+    from {{ ref('int_fact_climat_heure') }}
 ),
 meteo_daily as (
     select 
         {{ dbt_utils.generate_surrogate_key(['date_jour', 'ville', 'island']) }} as meteo_jour_id,
 
-        date_jour as date, ville, island,
+        date_jour, ville, island,
 
         avg(temperature_2m) as temperature_2m,
         max(temperature_2m) as temperature_2m_max,
@@ -95,7 +82,8 @@ meteo_daily as (
         mode(weather_code) as weather_code_simple,
         mode(wind_direction_10m) as wind_direction_10m_simple,
         latitude, longitude, grille_meteo
-    from joined
+
+    from int_fact_heure
     group by 
         date_jour, 
         ville, 
