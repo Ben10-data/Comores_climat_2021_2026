@@ -1,4 +1,6 @@
 SELECT 
+
+    {{ dbt_utils.generate_surrogate_key([ 'd.temps_id', 'l.localisation_id']) }} AS fait_climat_id,
     d.temps_id AS date_id,
     l.localisation_id AS localisation_id,
     w.weather_id AS weather_id,
@@ -32,12 +34,12 @@ SELECT
 
 FROM {{ ref('int_pour_mart_heure') }} AS m 
 
-LEFT JOIN {{ ref('dim_localisation') }} AS l
+INNER JOIN {{ ref('dim_localisation') }} AS l
     ON m.ville = l.ville 
    AND m.island = l.island
 
-LEFT JOIN {{ ref('dim_temps') }} AS d
+INNER JOIN {{ ref('dim_temps') }} AS d
     ON m.date_heure = d.date_heure  
 
-LEFT JOIN {{ ref('dim_weather') }} AS w
+INNER JOIN {{ ref('dim_weather') }} AS w
     ON m.weather_code_clean = w.weather_code

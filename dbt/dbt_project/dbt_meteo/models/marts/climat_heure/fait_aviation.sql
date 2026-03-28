@@ -1,5 +1,6 @@
 with aviation as (
     select 
+        {{ dbt_utils.generate_surrogate_key([ 'd.temps_id', 'l.localisation_id']) }} AS fait_aviation_id,
         d.temps_id       AS date_id,
         l.localisation_id AS localisation_id,
         w.weather_id      AS weather_id,
