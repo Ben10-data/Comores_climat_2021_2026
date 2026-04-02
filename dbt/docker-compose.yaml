@@ -7,6 +7,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: dbt_trans_snowflake
+    ports:
+      - "8087:8087"
     env_file:
       - ./dbt_project/dbt_meteo/models/.env
     volumes:

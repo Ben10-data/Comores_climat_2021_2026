@@ -5,4 +5,5 @@ logs/
 profiles.yml
 dbt_project.yml
 models/.env
+models/marts/climat_mois/mart.sql
 

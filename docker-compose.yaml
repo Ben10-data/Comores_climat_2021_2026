@@ -3,6 +3,7 @@
 include:
   - ./base_de_donnee/docker-compose.yaml
   - ./dbt/docker-compose.yaml
+  - ./streamlit/docker-compose.streamlit.yaml
 
 
 networks:
