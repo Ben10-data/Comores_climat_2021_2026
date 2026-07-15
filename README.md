@@ -451,7 +451,7 @@ Les Data Marts permettent de répondre à plusieurs problématiques :
 
 **Ben Omar**
 
-Data Engineer | Data Scientist
+Data Engineer | Ingenieur IA
 
 GitHub : https://github.com/Ben10-data
 ```
